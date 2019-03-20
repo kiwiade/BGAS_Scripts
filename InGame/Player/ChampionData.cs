@@ -1091,24 +1091,14 @@ public class ChampionData : Photon.MonoBehaviour, IPunObservable
         TotalStatDamDefUpdate();
         TotalStatSpeedUpdate();
 
-        //totalstat.Attack_Damage = mystat.Attack_Damage + itemstat.attack_damage;
         totalStat.AttackSpeed = myStat.AttackSpeed + itemStat.attackSpeed;
         totalStat.CriticalPercentage = myStat.CriticalPercentage + itemStat.criticalPercent;
-
-        // 흡혈 스탯이 없었던가?
-        //totalstat.life = mystat.life + itemstat.attack_damage;
-
         totalStat.AbilityPower = myStat.AbilityPower + itemStat.abilityPower;
         totalStat.MaxMp = myStat.MaxMp + itemStat.mana;
         totalStat.ManaRegen = myStat.ManaRegen * (1 + itemStat.manaRegen / 100f);
         totalStat.CoolTimeDecrease = myStat.CoolTimeDecrease + itemStat.cooldownReduce;
-
-        //totalstat.Attack_Def = mystat.Attack_Def + itemstat.armor;
-        //totalstat.Ability_Def = mystat.Ability_Def + itemstat.magic_resist;
         totalStat.MaxHp = myStat.MaxHp + itemStat.health;
         totalStat.HealthRegen = myStat.HealthRegen * (1 + itemStat.healthRegen / 100f);
-
-        //totalstat.Move_Speed = mystat.Move_Speed + itemstat.movement_speed;
         // 체젠 마젠은 %니까 100%증가면 2배의속도가 되게 (1 + x/100)을 곱해줌
     }
 
